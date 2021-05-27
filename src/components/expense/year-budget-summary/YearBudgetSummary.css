@@ -1,0 +1,36 @@
+.filter-by-year-container{
+    width: 40rem;
+    height: 9rem;
+    border-radius: 10px;
+    background-color: rgb(174, 179, 179);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.lable-year-button-container{
+    width: 40rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.year-lable{
+    color: rgb(163, 160, 157);
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: bolder;
+    letter-spacing: 0.2rem;
+}
+.year-select-button{
+    height: 2.5rem;
+    width: 8.5rem;
+    padding: 0.1rem;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: rgb(245, 240, 234);
+    background-color: blueviolet;
+    border-radius: 10px;
+  }

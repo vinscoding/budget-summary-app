@@ -1,0 +1,7 @@
+.app-container{
+    background-color: rgb(72, 73, 73);
+    display: flex;
+   
+    align-items: center;
+    flex-direction: column;
+}
