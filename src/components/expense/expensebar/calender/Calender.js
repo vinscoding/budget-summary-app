@@ -3,7 +3,7 @@ function Calender(props) {
   let month = new Intl.DateTimeFormat("en-US", { month: "long" }).format(
     props.date
   );
-  console.log(props.date.getFullYear());
+
   return (
     <div className="calender-container">
       <span className="expense-details" id="month">

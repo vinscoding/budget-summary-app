@@ -19,11 +19,20 @@ function YearBudgetSummary(props) {
     "dec",
   ];
 
-  console.log(
-    props.getAmtSumMonth(props.expense, Number(selectedYear)),
+  //function is defined in app.js and called here
+  const monthSumArray = props.getAmtSumMonth(
     props.expense,
-    Number(selectedYear)
+    Number(props.selectedYear)
   );
+  
+
+  //normalization
+  const maxValue = Math.max(...monthSumArray);
+  
+  const monthBarHeightArray = monthSumArray.map((ele, index) => ({
+    month: monthArray[index],
+    barfill: maxValue!==0? (ele / maxValue) * 4 + "rem":"0rem",
+  }));
 
   const yearSelectionHandler = (event) => {
     setSeletedYear(event.target.value);
@@ -45,8 +54,12 @@ function YearBudgetSummary(props) {
         </select>
       </div>
       <div className="filter-by-year-container">
-        {monthArray.map((month, index) => (
-          <MonthBar key={index} month={month}></MonthBar>
+          {monthBarHeightArray.map((ele, index) => (
+          <MonthBar
+            key={index}
+            month={ele.month}
+            barfill={ele.barfill}
+          ></MonthBar>
         ))}
       </div>
     </div>

@@ -4,7 +4,7 @@ import YearBudgetSummary from "./year-budget-summary/YearBudgetSummary";
 import { useState } from "react";
 
 function Expenses(props) {
-  const [selectedYear, setSelectedYear] = useState("2020");
+  const [selectedYear, setSelectedYear] = useState("2021");
 
   const selectedYearHandler = (Year) => {
     setSelectedYear(Year);

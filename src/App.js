@@ -7,7 +7,7 @@ import YearBudgetSummary from "./components/expense/year-budget-summary/YearBudg
 
 const expenseDetails = [
   {
-    date: new Date(2021, 1, 1),
+    date: new Date(2021, 0, 1),
     title: "bat",
     amount: 200,
   },
@@ -17,9 +17,14 @@ const expenseDetails = [
     amount: 2000,
   },
   {
-    date: new Date(2021, 1, 11),
+    date: new Date(2021, 2, 11),
     title: "chair",
     amount: 1000,
+  },
+  {
+    date: new Date(2021, 4, 11),
+    title: "Mobile Phone",
+    amount: 5000,
   },
 ];
 
