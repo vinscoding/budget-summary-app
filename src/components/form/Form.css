@@ -33,18 +33,44 @@
   }
   .button{
     height: 3rem;
-    width: 10rem;
+    width: 8rem;
     border-radius: 10px;
     font-weight: bolder;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     color: rgb(245, 240, 234);
     background-color: blueviolet;
     border-radius: 10px;
+    margin: 0.3rem;
+  }
+  .expense-button{
+    height: 3rem;
+    width: 10rem;
+    border-radius: 10px;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: rgb(245, 240, 234);
+    background-color: blueviolet;
+    border-radius: 10px;
+    margin: 0.3rem;
+
   }
 
   #form-date, #amount,#title{
     font-size: 1.2rem;
+  }
+
+  .expense-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+    height: 8rem;
+    margin: 1rem;
+    background-color: rgb(158,134,236);
+    border-radius: 13px;
+    padding: 2rem;
   }
 
   

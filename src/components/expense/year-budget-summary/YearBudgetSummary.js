@@ -1,7 +1,9 @@
 import MonthBar from "./month-bar/MonthBar";
 import "./YearBudgetSummary.css";
+import { useState } from "react";
 
 function YearBudgetSummary(props) {
+  const [selectedYear, setSeletedYear] = useState(props.selectedYear);
   const monthArray = [
     "jan",
     "feb",
@@ -16,7 +18,15 @@ function YearBudgetSummary(props) {
     "nov",
     "dec",
   ];
+
+  console.log(
+    props.getAmtSumMonth(props.expense, Number(selectedYear)),
+    props.expense,
+    Number(selectedYear)
+  );
+
   const yearSelectionHandler = (event) => {
+    setSeletedYear(event.target.value);
     props.onSelectedYear(event.target.value);
   };
   return (
