@@ -2,7 +2,9 @@ import MonthBar from "./month-bar/MonthBar";
 import "./YearBudgetSummary.css";
 import { useState } from "react";
 
+//this component renders the bar chart
 function YearBudgetSummary(props) {
+  //this function needs to re-run whenever a year is selected through filter
   const [selectedYear, setSeletedYear] = useState(props.selectedYear);
   const monthArray = [
     "jan",
@@ -25,15 +27,15 @@ function YearBudgetSummary(props) {
     Number(props.selectedYear)
   );
   
-
-  //normalization
+  //find max value
   const maxValue = Math.max(...monthSumArray);
-  
+  //normalization
   const monthBarHeightArray = monthSumArray.map((ele, index) => ({
     month: monthArray[index],
     barfill: maxValue!==0? (ele / maxValue) * 4 + "rem":"0rem",
   }));
 
+  //send the selected year to parent
   const yearSelectionHandler = (event) => {
     setSeletedYear(event.target.value);
     props.onSelectedYear(event.target.value);

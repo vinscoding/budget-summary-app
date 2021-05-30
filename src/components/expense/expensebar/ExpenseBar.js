@@ -1,6 +1,7 @@
 import "./ExpenseBar.css";
 import Calender from "./calender/Calender";
 
+//expense bar component use custom calender component
 function ExpenseBar(props) {
   return (
     <div className="expense-bar">

@@ -15,3 +15,19 @@
     font-weight: bolder;
     font-size: 1.7rem;
   }
+  @media only screen and (max-width:500px) {
+    .calender-container {
+      height: 3.5rem;
+      width: 17%;
+      padding: 0.1rem;
+      border: rgb(206, 201, 201) 0.2px solid;
+      font-size: 0.5rem;
+      line-height: 1.7;
+     
+    }
+    #date {
+      font-weight: bolder;
+      font-size: 0.8rem;
+    }
+    
+  }

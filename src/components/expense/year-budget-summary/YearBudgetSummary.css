@@ -34,3 +34,24 @@
     background-color: blueviolet;
     border-radius: 10px;
   }
+  @media only screen and (max-width:500px){
+    .filter-by-year-container{
+        width: 19rem;
+        height: 7rem;
+    }
+    .lable-year-button-container{
+        width: 19rem;
+        height: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .year-lable{
+        font-size: 0.8rem;
+        letter-spacing: 0.2rem;
+    }
+    .year-select-button{
+        height: 2rem;
+        width: 4rem;
+        font-size: 0.8rem;
+      }  
+
+  }

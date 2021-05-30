@@ -2,9 +2,9 @@ import "./App.css";
 import Expenses from "./components/expense/Expenses";
 import Form from "./components/form/Form";
 import {useState} from 'react'
-import YearBudgetSummary from "./components/expense/year-budget-summary/YearBudgetSummary";
 
 
+//initial static input expenses
 const expenseDetails = [
   {
     date: new Date(2021, 0, 1),
@@ -29,27 +29,26 @@ const expenseDetails = [
 ];
 
 function App() {
+  //app needs to be re-evaluated whenever new expense is added, thus we declare a state variable for expense 
   const [newExpenseDatails, setNewExpenseDetails] = useState(expenseDetails);
+
+  //this function is defined here but its called in form component that is form.js, whenever a user submit form, a handler function is triggred which inturn call this function and sends newly added data
   const formHandler = (formData) => {
     setNewExpenseDetails([{ ...formData }, ...newExpenseDatails])
   };
 
-  const expenseDetailYearMonthAmount = expenseDetails.map(expenseDetails => 
-     ({
-      year: expenseDetails.date.getFullYear(),
-      month: expenseDetails.date.getMonth(),
-      amount: expenseDetails.amount
-    })
-  );
-  
+  //filter expense detail for a given year
   function expenseDetailsOfGivenYear(year,expense) {
     return expense.filter(element=>element.date.getFullYear()===year)
   }
-
+  
+  //add amount for given month
   function addAmount(month,array) {
    return array.reduce((acc, ele) => ele.date.getMonth()===month ? acc + ele.amount: acc, 0);
   }
 
+  //compute amount for all the month and store in a array
+  //this function is called in yearBudgetSummary as the return value of this function is required there
   function result(expense, selectedYear) {
     let monthAmountArray=[]
     for (let month = 0; month < 12; month++){
@@ -57,12 +56,21 @@ function App() {
     }
     return monthAmountArray;
   }
-
+  
+//we are using custom build components here
+//form and expenses are the custom built components
   return (
     <div className="app-container">
       <Form onSaveForm={formHandler}></Form>
-      
-      <Expenses expenseDetails={newExpenseDatails} getAmtSumOfMonth={result} ></Expenses>
+      <Expenses
+        expenseDetails={newExpenseDatails}
+        getAmtSumOfMonth={result}
+      ></Expenses>
+      <div className="signature-container">
+        <a href="https://github.com/vinscoding" className="signature">
+          By vinscoding
+        </a>
+      </div>
     </div>
   );
 }

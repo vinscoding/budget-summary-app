@@ -72,6 +72,56 @@
     border-radius: 13px;
     padding: 2rem;
   }
+  @media only screen and (max-width:500px){
+    .form-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      
+      width: 19rem;
+      height: 15rem;
+      margin: 1rem;
+      padding: 1rem;
+      font-size: 0.8rem;
+    }
+    input{
+      height: 2rem;
+      width: 12rem;
+      border-radius: 10px;
+      margin-bottom: 0.3rem;
+    }
+    .button-container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     margin-top: 0.4rem;
+    }
+    .button{
+      height: 2rem;
+      width: 6rem;
+      font-size: 0.6rem;
+      margin: 0.3rem;
+    }
+    .expense-button{
+      height: 2.5rem;
+      width: 8rem;
+      font-size: 0.8rem;
+  
+    }
+    #form-date, #amount,#title{
+      font-size: 1rem;
+    }
+  
+    .expense-button-container{
+      width: 19rem;
+      height: 5rem;
+      margin: 1rem;
+      background-color: rgb(158,134,236);
+      border-radius: 13px;
+      padding: 2rem;
+    }
 
+  }
   
  
